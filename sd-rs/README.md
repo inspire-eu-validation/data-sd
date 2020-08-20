@@ -26,7 +26,7 @@ An indirect dependency is another conformance class whose requirements must be m
 
 | Specification | Conformance class | Related resource | Parameters |
 | ------------- | ----------------- | ---------------- | ---------- |
-| [TG DS-SD](#ref_TG_DS_SD) | [GML application schema, Species Distribution Simple](../sd-gml/README.md) | INSPIRE spatial data set encoded in GML, Species Distribution features | n/a |
+| [TG DS-SD](#ref_TG_DS_SD) | [GML application schema, Species Distribution](../sd-gml/README.md) | INSPIRE spatial data set encoded in GML, Species Distribution features | n/a |
  
 ## Feature types <a name="feature-types"></a>
 
