@@ -44,4 +44,7 @@ Abbreviation                                               |  XPath expression  
 ---------------------------------------------------------- | -----------------------|---------------|---------------------------------
 GeneralCountingUnitValue <a name ="GeneralCountingUnitValue"></a>	| //schema-element(sd:SpeciesDistributionUnit)//sd:distributionInfo/sd:DistributionInfoType/sd:populationSize/sd:PopulationSizeType/sd:countingUnit/@xlink:href | 1 (The parent is optional) | No
 Article17CountingUnitValue <a name ="Article17CountingUnitValue"></a>	| //schema-element(sd:SpeciesDistributionUnit)//sd:distributionInfo/sd:DistributionInfoType/sd:populationSize/sd:PopulationSizeType/sd:countingUnit/@xlink:href | 1 (The parent is optional) | No
-TO BE COMPLETED
+LocalSpeciesNameCodeValue <a name ="LocalSpeciesNameCodeValue"></a>	| //schema-element(sd:SpeciesDistributionUnit)//sd:speciesName/sd:SpeciesNameType/sd:localSpeciesId/@xlink:href | 0..1 | Yes
+OccurrenceCategoryValue <a name ="OccurrenceCategoryValue"></a>	| //schema-element(sd:SpeciesDistributionUnit)//sd:distributionInfo/sd:DistributionInfoType/sd:occurrenceCategory/@xlink:href | 1 | No
+PopulationTypeValue <a name ="PopulationTypeValue"></a>	| //schema-element(sd:SpeciesDistributionUnit)//sd:distributionInfo/sd:DistributionInfoType/sd:populationType/@xlink:href | 0..1 | Yes
+ResidencyStatusValue <a name ="ResidencyStatusValue"></a>	| //schema-element(sd:SpeciesDistributionUnit)//sd:distributionInfo/sd:DistributionInfoType/sd:residencyStatus/@xlink:href | 0..1 | Yes
