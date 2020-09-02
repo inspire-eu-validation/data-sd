@@ -8,7 +8,7 @@
 
 The following checks shall be manually performed for every feature in the dataset.
 
-* Where grid representations of species distributions are needed, the Grid_ETRS89-LAEA as defined in Section 2.2.1 of Annex II shall be used.
+* Where grid representations of species distributions are needed, the Grid_ETRS89-LAEA as defined in Section 2.2.1 of Annex II ([IR-ISDSS](./README.md#ref_IR-ISDSS)) shall be used.
 * For SpeciesDistributionUnit spatial objects:
 	* if a species has not been actively searched for, the distributionInfo attribute shall be void with reason “unknown”,
 	* and if a species has been actively searched for, but has not been found, the value of the attribute occurenceCategory of DistributionInfoType shall be “absent”."

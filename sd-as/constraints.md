@@ -8,7 +8,7 @@
 
 The following checks are performed for every feature in the dataset.
 
-* Check that if the [geometry](#geometry) of the Species Distribution Unit feature type has no value, a reference to a [spatial object](#spatial_object) needs to be provided.
+* Check that if the [geometry](#geometry) of the Species Distribution Unit feature type has no value, a reference to a [spatial object](#spatial_object) needs to be provided. (OCL: self.geometry->isEmpty() implies self.spatialObject->notEmpty())
 
 
 **Reference(s)**: 
