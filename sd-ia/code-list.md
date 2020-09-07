@@ -8,15 +8,17 @@
 
 * Verify that any code list extensions are publicly accessible via HTTP, i.e. inspect extensible code list values property elements. If a reference (@xlink:href) has a value that does not start with http://inspire.ec.europa.eu/codelist/, verify that a HTTP GET request to the URI retrieves a document. Otherwise report [brokenLink](#brokenLink).
 
-This data theme currently has the following extensible code lists:
+This data theme currently has the following extensible code list:
+
+* [OccurrenceCategoryValue](#OccurrenceCategoryValue) : https://inspire.ec.europa.eu/codelist/OccurrenceCategoryValue
+
+This data theme currently has the following empty code lists:
 
 * [GeneralCountingUnitValue](#GeneralCountingUnitValue) : https://inspire.ec.europa.eu/codelist/GeneralCountingUnitValue
 
 * [Article17CountingUnitValue](#Article17CountingUnitValue) :  https://inspire.ec.europa.eu/codelist/Article17CountingUnitValue
 
 * [LocalSpeciesNameCodeValue](#LocalSpeciesNameCodeValue) : https://inspire.ec.europa.eu/codelist/LocalSpeciesNameCodeValue
-
-* [OccurrenceCategoryValue](#OccurrenceCategoryValue) : https://inspire.ec.europa.eu/codelist/OccurrenceCategoryValue
 
 * [PopulationTypeValue](#PopulationTypeValue) : https://inspire.ec.europa.eu/codelist/PopulationTypeValue
 
