@@ -58,7 +58,7 @@ The following check is performed for every feature in the dataset, for the open 
 * [TG DS Template](./README.md#ref_TG_DS_tmpl) IR requirement Article 6 (3)
 * [TG DS Template](./README.md#ref_TG_DS_tmpl) IR requirement Article 6 (4)
 
-**Test type**: Automated + Manual check
+**Test type**: Automated + Manual check (if required)
 
 **Notes**
 
