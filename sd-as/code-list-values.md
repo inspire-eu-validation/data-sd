@@ -42,7 +42,7 @@ The following checks are performed for every feature in the dataset, for the not
 
 The following check is performed for every feature in the dataset, for the open codelist:
 
-* Check that all the [occurrenceCategory](#occurrenceCategory) elements has a xlink:href attribute pointing to a [pre-defined value](#preDefinedValue). If the check fails a manual check will be required asking to review the code list definition in order to verify that any extensions do not overlap with the code lists that are defined in Annexes II, III and IV of the Implementing Rule.
+* Check that all the [occurrenceCategory](#occurrenceCategory) elements has a xlink:href attribute pointing to a [pre-defined value](#preDefinedValue). If the check fails a manual check will be required asking to review the code list definition in order to verify that any extensions do not overlap with the code lists that are defined in Annexes II, III and IV of the Implementing Rule. If the check fails report [reviewCodeListValue](#reviewCodeListValue).
 
 | <a name="preDefinedValue"></a> Pre-defined values for xlink:href attribute of [occurrenceCategory](#occurrenceCategory) element are available in the INSPIRE Registry| 
 | ---- | 
@@ -70,7 +70,8 @@ Inspect the code list valued property elements. If a value is not one of the val
 
 Identifier  |  Message text (parameters start with '$')
 ---------------------------------------------------------- | -------------------------------------------------------------------------
-disallowedCodeListValue <a name="disallowedCodeListValue"/>  |  XML document '$filename', $featureType '$gmlid': The property '$propertyName' has a value '$value' that is not one of the allowed values listed at $codelist. 
+disallowedCodeListValue <a name="disallowedCodeListValue"/> | XML document '$filename', $featureType '$gmlid': The property '$propertyName' has a value '$value' that is not one of the allowed values listed at $codelist. Please note that the URIs of all code list values from the INSPIRE Registry shall be referenced using the http protocol. 
+reviewCodeListValue <a name="reviewCodeListValue"/> | XML document '{filename}', {featureType} '{gmlid}': The property '{property}' has a value '{value}' that is not one of the pre-defined values in the INSPIRE data specification. The same value is used by {count} other features in the dataset, too. Extensions to the pre-defined values are allowed, but must not overlap with one of the pre-defined values and be consistent with the specification of the property. Please review the definition of the value. Please note that the URIs of all code list values from the INSPIRE Registry shall be referenced using the http protocol. 
 
 ## Contextual XPath references
 
