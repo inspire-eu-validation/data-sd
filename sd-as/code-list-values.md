@@ -6,32 +6,47 @@
 
 **Test method**
 
-The following check is performed for every feature in the dataset.
+When an attribute has a code list as its type, verify that the values comply with the definitions and include the values set out in Annex II, III and IV of the Implementing Rule. To pass this test verify that any instance of an attribute:
 
-* Check that all the [referenceSpeciesScheme](#referenceSpeciesScheme) elements has a xlink:href attribute pointing to a [valid value](#validValue). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
+* takes only values explicitly specified in the INSPIRE code list register when the code list‘s extensibility is 'none'.
+* takes only a value explicitly specified in the INSPIRE code list register or shall take a value that is narrower (i.e. more specific) than those explicitly specified in the application schema when the code list‘s extensibility is 'narrower'.
+* takes values explicitly specified in the INSPIRE code list register when the code list‘s extensibility is 'open' or if a value is not one of the values listed in the code list register check that any extensions do not overlap with the code lists that are defined in Annexes II, III and IV of the Implementing Rule and that all extensions conform to the requirements (This last check is a manual test).
 
-* Check that all the [referenceSpeciesId](#referenceSpeciesId) elements has a xlink:href attribute pointing to a [valid value](#validValue). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
+The following checks are performed for every feature in the dataset, for the not extensible codelists:
 
-* Check that all the [qualifier](#qualifier) elements (if present) has a xlink:href attribute pointing to a [valid value](#validValue). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
+* Check that all the [referenceSpeciesScheme](#referenceSpeciesScheme) elements has a xlink:href attribute pointing to a [valid value](#validValue1). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
 
-* Check that all the [countingMethod](#countingMethod) elements (if present) has a xlink:href attribute pointing to a [valid value](#validValue). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
+* Check that all the [referenceSpeciesId](#referenceSpeciesId) elements has a xlink:href attribute pointing to a [valid value](#validValue2). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
+
+* Check that all the [qualifier](#qualifier) elements (if present) has a xlink:href attribute pointing to a [valid value](#validValue3). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
+
+* Check that all the [countingMethod](#countingMethod) elements (if present) has a xlink:href attribute pointing to a [valid value](#validValue4). If the check fails report [disallowedCodeListValue](#disallowedCodeListValue).
 
 
-| <a name="validValue"></a> Valid values for xlink:href attribute of [referenceSpeciesScheme](#referenceSpeciesScheme) element are available in the INSPIRE Registry| 
+| <a name="validValue1"></a> Valid values for xlink:href attribute of [referenceSpeciesScheme](#referenceSpeciesScheme) element are available in the INSPIRE Registry| 
 | ---- | 
 | http://inspire.ec.europa.eu/codelist/ReferenceSpeciesSchemeValue | 
 
-| <a name="validValue"></a> Valid values for xlink:href attribute of [referenceSpeciesId](#referenceSpeciesId) element are available in the INSPIRE Registry. Note: The following codelists are externally governed.| 
+| <a name="validValue2"></a> Valid values for xlink:href attribute of [referenceSpeciesId](#referenceSpeciesId) element are available in the INSPIRE Registry. Note: The following codelists are externally governed.| 
 | ---- | 
 | https://inspire.ec.europa.eu/codelist/EuNomenCodeValue <br> https://inspire.ec.europa.eu/codelist/EunisSpeciesCodeValue <br> https://inspire.ec.europa.eu/codelist/NatureDirectivesCodeValue|
 
-| <a name="validValue"></a> Valid values for xlink:href attribute of [qualifier](#qualifier) element are available in the INSPIRE Registry| 
+| <a name="validValue3"></a> Valid values for xlink:href attribute of [qualifier](#qualifier) element are available in the INSPIRE Registry| 
 | ---- | 
 | http://inspire.ec.europa.eu/codelist/QualifierValue | 
 
-| <a name="validValue"></a> Valid values for xlink:href attribute of [countingMethod](#countingMethod) element are available in the INSPIRE Registry| 
+| <a name="validValue4"></a> Valid values for xlink:href attribute of [countingMethod](#countingMethod) element are available in the INSPIRE Registry| 
 | ---- | 
 | http://inspire.ec.europa.eu/codelist/CountingMethodValue | 
+
+
+The following check is performed for every feature in the dataset, for the open codelist:
+
+* Check that all the [occurrenceCategory](#occurrenceCategory) elements has a xlink:href attribute pointing to a [pre-defined value](#preDefinedValue). If the check fails a manual check will be required asking to review the code list definition in order to verify that any extensions do not overlap with the code lists that are defined in Annexes II, III and IV of the Implementing Rule.
+
+| <a name="preDefinedValue"></a> Pre-defined values for xlink:href attribute of [occurrenceCategory](#occurrenceCategory) element are available in the INSPIRE Registry| 
+| ---- | 
+| http://inspire.ec.europa.eu/codelist/OccurrenceCategoryValue | 
 
 
 **Reference(s)**: 
@@ -43,7 +58,7 @@ The following check is performed for every feature in the dataset.
 * [TG DS Template](./README.md#ref_TG_DS_tmpl) IR requirement Article 6 (3)
 * [TG DS Template](./README.md#ref_TG_DS_tmpl) IR requirement Article 6 (4)
 
-**Test type**: Automated
+**Test type**: Automated + Manual check
 
 **Notes**
 
@@ -67,3 +82,4 @@ referenceSpeciesScheme <a name="referenceSpeciesScheme"></a>   | //schema-elemen
 referenceSpeciesId <a name="referenceSpeciesId"></a>   | //schema-element(sd:SpeciesDistributionUnit)/sd:speciesName/sd:SpeciesNameType/sd:referenceSpeciesId | 1 | No
 qualifier <a name="qualifier"></a> | //schema-element(sd:SpeciesDistributionUnit)sd:speciesName/sd:SpeciesNameType/sd:qualifier | 0..1 | Yes
 countingMethod <a name="countingMethod"></a> | //schema-element(sd:SpeciesDistributionUnit)/sd:distributionInfo/sd:DistributionInfoType/sd:populationSize/sd:PopulationSizeType/sd:countingMethod | 1 (The parent is optional) | No
+occurrenceCategory <a name ="occurrenceCategory"></a>	| //schema-element(sd:SpeciesDistributionUnit)/sd:distributionInfo/sd:DistributionInfoType/sd:occurrenceCategory/@xlink:href | 1 (The parent is optional) | No
